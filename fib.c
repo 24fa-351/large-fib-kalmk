@@ -6,19 +6,13 @@ unsigned long long fib_i(int times);
 unsigned long long fib_r(int times);
 
 int main(int argc, char *argv[]) {
-    int first_arg = atoi(argv[1]);
+    int index = atoi(argv[1]);
+    char fib_method = argv[2][0];
 
-    char *temp = malloc(sizeof(argv[2]));
-    strcpy(temp, argv[2]);
-    char second_arg = temp[0];
-    free(temp);
-
-    int N = first_arg;
-
-    if (second_arg == 'i') {
-        printf("%lld\n", fib_i(N));
-    } else if (second_arg == 'r') {
-        printf("%lld\n", fib_r(N));
+    if (fib_method == 'i') {
+        printf("%llu\n", fib_i(index));
+    } else if (fib_method == 'r') {
+        printf("%llu\n", fib_r(index));
     }
 
     return 0;
