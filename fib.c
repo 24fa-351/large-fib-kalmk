@@ -6,6 +6,10 @@ unsigned long long fib_i(int times);
 unsigned long long fib_r(int times);
 
 int main(int argc, char *argv[]) {
+    if (argc != 3) {
+        printf("Usage: %s <index> <method>\n", argv[0]);
+        return 1;
+    }
     int index = atoi(argv[1]);
     char fib_method = argv[2][0];
 
